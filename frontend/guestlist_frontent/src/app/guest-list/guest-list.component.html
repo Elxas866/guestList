@@ -3,6 +3,7 @@
     <ul>
       <li *ngFor="let guest of guests">
         {{ guest.name }} ({{ guest.phone }})
+        <button (click)="deleteGuest(guest.id)">Löschen</button>
       </li>
     </ul>
 </div>

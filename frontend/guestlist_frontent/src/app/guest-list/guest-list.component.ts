@@ -16,4 +16,10 @@ export class GuestListComponent implements OnInit {
       this.guests = data;
     });
   }
+
+  deleteGuest(id: number) { 
+    this.guestService.deleteGuest(id).subscribe(() => {
+      this.guests = this.guests.filter(guest => guest.id !== id);
+    });
+  }
 }
